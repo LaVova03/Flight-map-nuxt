@@ -96,6 +96,7 @@ watch(animation, (newValue) => {
 const toggleAnimation = () => {
   animation.value = !animation.value;
 };
+
 </script>
 
 <template>
