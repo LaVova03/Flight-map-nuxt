@@ -74,7 +74,7 @@ const startAnimation = () => {
   interval = setInterval(() => {
     if (currentIndex >= flight_data.length) {
       clearInterval(interval);
-      animation.value = false; 
+      animation.value = false;
       return;
     }
 
@@ -102,7 +102,9 @@ const toggleAnimation = () => {
   <main>
     <LMap :zoom="zoom" :center="center" :useGlobalLeaflet="false">
       <LTileLayer
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+        :url="`https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${
+          useRuntimeConfig().public.STADIA_MAPS_API_KEY
+        }`"
         layer-type="base"
         name="Stadia Maps Basemap"
       />
